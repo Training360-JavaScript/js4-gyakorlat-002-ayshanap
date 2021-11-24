@@ -42,8 +42,8 @@ const getProducts = (url) => {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const dataSort = data.sortProducts;
-            productData = dataSort;
+            productData = data;
+            sortProducts(productData);
         })
         .catch(() => console.log(`Error: ${url} is not found!`))
 };
